@@ -59,9 +59,10 @@ public class ProductService {
     }
 
     public void saveProduct (Product product) {
-        if (productRepo.getProductByIndex(product.getId()) != null)
-            productRepo.addProduct(product);
-        else
-            throw new ResourceExistsException("Товар с таким ID уже сужествует");
+        productRepo.getProductByIndex(product.getId()).ifPresent(p -> productRepo.addProduct(product));
+        //        if (productRepo.getProductByIndex(product.getId()) != null)
+//            productRepo.addProduct(product);
+//        else
+//            throw new ResourceExistsException("Товар с таким ID уже сужествует");
     }
 }
