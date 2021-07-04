@@ -28,7 +28,7 @@ public class Costumer {
     private Date birthday;
 
     @Column(name = "phone")
-    private int phone;
+    private long phone;
 
     @ManyToMany
     @JoinTable(
@@ -37,14 +37,14 @@ public class Costumer {
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products;
 
-    public Costumer(String name, char sex, Date birthday, int phone) {
+    public Costumer(String name, char sex, Date birthday, long phone) {
         this.name = name;
         this.sex = sex;
         this.birthday = birthday;
         this.phone = phone;
     }
 
-    public Costumer(String name, int phone) {
+    public Costumer(String name, long phone) {
         this.name = name;
         this.phone = phone;
     }
