@@ -1,4 +1,4 @@
-package ru.geekbrains.ap.homework8;
+package ru.geekbrains.app.homework8;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
