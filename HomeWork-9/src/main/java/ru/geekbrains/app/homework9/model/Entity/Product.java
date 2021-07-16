@@ -1,4 +1,4 @@
-package ru.geekbrains.app.homework9.model;
+package ru.geekbrains.app.homework9.model.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +14,10 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @Column(name = "title")
     private String title;

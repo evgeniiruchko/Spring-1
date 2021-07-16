@@ -39,6 +39,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
+                    <td>Категория</td>
                     <td>Наименование</td>
                     <td>Цена</td>
                     <td>Удалить</td>
@@ -46,6 +47,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="p in ProductsList">
+                    <td>{{p.category}}</td>
                     <td>{{p.title}}</td>
                     <td>{{p.price}}</td>
                     <td>

@@ -4,7 +4,7 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     //создаём функцию с именем fillTable
     $scope.fillTable = function () {
         $http({
-            url: contextPath + '/products',
+            url: contextPath + '/api/v1/products',
             method: 'GET',
             params: {
                 min_price: $scope.filter ? $scope.filter.min_price : null,
