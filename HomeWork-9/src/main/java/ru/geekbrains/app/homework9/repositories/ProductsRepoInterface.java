@@ -15,4 +15,5 @@ public interface ProductsRepoInterface extends JpaRepository<Product, Long>, Jpa
     List<Product> findAllByPriceLessThanEqual(Float price);
     List<Product> findAllByPriceBetween(Float priceMin, Float priceMax);
     List<Product> findAllBySaleIsTrueAndOldPriceNotNull();
+    Product findProductById(Long id);
 }

@@ -17,7 +17,7 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     };
 
     $scope.submitCreateNewProduct = function () {
-        $http.post(contextPath + '/products', $scope.newProduct)
+        $http.post(contextPath + '/api/v1/products', $scope.newProduct)
             .then(function (response) {
                 $scope.newProduct = null;
                 $scope.fillTable();
@@ -25,11 +25,30 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     };
 
     $scope.deleteProductById = function (id) {
-        $http.delete(contextPath + "/products/" + id)
+        $http.delete(contextPath + "/api/v1/products" + id)
             .then (function (response) {
                 $scope.fillTable();
             });
     }
 
+    $scope.addToCart = function (id) {
+        $http.post(contextPath + "/api/v1/cart", id)
+            .then (function (response) {
+                $scope.fillCart();
+            });
+    }
+
+    $scope.getLength = function(obj) {
+        return Object.keys(obj).length;
+    }
+
+    $scope.fillCart = function () {
+        $http.get(contextPath + "/api/v1/cart")
+            .then(function (response) {
+                $scope.cartList = response.data;
+            })
+    }
+
+    $scope.fillCart();
     $scope.fillTable();
 });

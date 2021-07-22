@@ -42,6 +42,7 @@
                     <td>Категория</td>
                     <td>Наименование</td>
                     <td>Цена</td>
+                    <td>Добавить в корзину</td>
                     <td>Удалить</td>
                 </tr>
             </thead>
@@ -50,6 +51,9 @@
                     <td>{{p.category}}</td>
                     <td>{{p.title}}</td>
                     <td>{{p.price}}</td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="addToCart(p.id)">Добавить в корзину</button>
+                    </td>
                     <td>
                         <button class="btn btn-danger" ng-click="deleteProductById(p.id)">Удалить товар</button>
                     </td>
@@ -71,6 +75,9 @@
             </ul>
         </nav>
 
+        <h4>Товаров в корзине : {{ getLength(cartList) }}</h4>  <a href="cart.html"> Перейти в корзину</a>
+
+
         <h3>Добавить товар</h3>
         <form novalidate ng-submit="submitCreateNewProduct()">
             <div class="form-group col-md-6">
@@ -80,6 +87,10 @@
             <div class="form-group col-md-6">
                 <label for="newProductPrice">Цена</label>
                 <input class="form-control" type="number" ng-model="newProduct.price" id="newProductPrice">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="newProductIdCategory">Номер категории</label>
+                <input class="form-control" type="number" ng-model="newProduct.category_id" id="newProductIdCategory">
             </div>
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" ng-model="newProduct.sale" id="newProductSale">
