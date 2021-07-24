@@ -3,6 +3,7 @@ package ru.geekbrains.app.homework9.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.app.homework9.exceptions.ResourceNotFoundException;
+import ru.geekbrains.app.homework9.model.Entity.Cart;
 import ru.geekbrains.app.homework9.model.Entity.Product;
 import ru.geekbrains.app.homework9.model.Dto.ProductDto;
 import ru.geekbrains.app.homework9.services.ProductService;
@@ -65,7 +66,7 @@ public class ProductController {
 
 
     @PostMapping
-        public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody Product product) {
             return productService.saveProduct(product);
     }
 

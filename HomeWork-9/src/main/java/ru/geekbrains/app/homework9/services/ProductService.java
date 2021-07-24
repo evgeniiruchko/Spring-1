@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class ProductService {
 
-    private ProductsRepoInterface productsRepoInterface;
+    private final ProductsRepoInterface productsRepoInterface;
 
     private final MappingUtils mappingUtils;
 
@@ -63,4 +63,5 @@ public class ProductService {
     public Product saveProduct (Product product) {
         return productsRepoInterface.save(product);
     }
+
 }
