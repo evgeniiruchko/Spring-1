@@ -15,20 +15,6 @@ public class ProductsListServlet extends HttpServlet {
 
     private static Logger logger = LoggerFactory.getLogger(ProductsListServlet.class);
 
-    //private transient ServletConfig config;
-
-    // Метод вызывается контейнером после того как был создан класс сервлета
-//    @Override
-//    public void init(ServletConfig config) throws ServletException {
-//        // Сохраняем полученную от сервера конфигурацию
-//        this.config = config;
-//    }
-//
-//    @Override
-//    public ServletConfig getServletConfig() {
-//        return config;
-//    }
-
     // Метод вызывается для каждого нового HTTP запроса к данному сервлету
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {

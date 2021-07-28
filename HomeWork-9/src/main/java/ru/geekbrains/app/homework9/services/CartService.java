@@ -2,14 +2,11 @@ package ru.geekbrains.app.homework9.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.geekbrains.app.homework9.model.Dto.ProductDto;
-import ru.geekbrains.app.homework9.model.Entity.Cart;
 import ru.geekbrains.app.homework9.model.Entity.Product;
 import ru.geekbrains.app.homework9.repositories.ProductsRepoInterface;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

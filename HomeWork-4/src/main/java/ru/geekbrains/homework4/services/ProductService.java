@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import ru.geekbrains.homework4.model.Product;
 import ru.geekbrains.homework4.repositories.ProductRepo;
 import ru.geekbrains.homework4.repositories.ProductsRepoInterface;
-import ru.geekbrains.homework4.exceptions.*;
 
 import java.util.List;
 
@@ -40,29 +39,11 @@ public class ProductService {
         return productRepo.getProductList();
     }
 
-//    private Product getProductByIndex(long id) {
-////        List<Product> list= getAllProducts();
-////        for (Product product : list) {
-////            if (product.getId() == id) {
-////                return product;
-////            }
-////        }
-//        getAllProducts().stream()
-//                .filter(p -> p.getId() == id)
-//                .findFirst();
-//        return null;
-//    }
-
     public void deleteById (long id) {
-        //productRepo.deleteProduct(productRepo.getProductByIndex(id));
         productRepo.deleteById(id);
     }
 
     public void saveProduct (Product product) {
         productRepo.getProductByIndex(product.getId()).ifPresent(p -> productRepo.addProduct(product));
-        //        if (productRepo.getProductByIndex(product.getId()) != null)
-//            productRepo.addProduct(product);
-//        else
-//            throw new ResourceExistsException("Товар с таким ID уже сужествует");
     }
 }

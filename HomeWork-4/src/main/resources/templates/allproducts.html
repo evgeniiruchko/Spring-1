@@ -30,7 +30,6 @@
 
     <span th:text="'Количество товаров: ' + ${frontProducts.size()}"/>
     <form th:action="@{'/products/add'}" method="post">
-        <!-- GET http://localhost:8189/app/boxes/add?id=10&color=red&size=20 -->
         <label>id</label>
         <input type="number" name="id">
         <label>title</label>

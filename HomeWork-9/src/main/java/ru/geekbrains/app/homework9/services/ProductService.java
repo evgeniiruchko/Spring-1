@@ -22,14 +22,6 @@ public class ProductService {
         return (int) productsRepoInterface.count();
     }
 
-//    public List<Product> getAllProducts() {
-//        return (List<Product>) productsRepoInterface.findAll();
-//    }
-
-//    public List<ProductDto> getAllSaleProducts() {
-//        return productsRepoInterface.findAllBySaleIsTrueAndOldPriceNotNull().stream().map(ProductDto::new);
-//    }
-
     public Optional<ProductDto> getProductById(Long id) {
         return productsRepoInterface.findById(id).map(ProductDto::new);
     }
@@ -38,23 +30,12 @@ public class ProductService {
         return productsRepoInterface.findProductByTitleContainingIgnoreCase(title);
     }
 
-//    public List<Product> getProductBeforeMaxPrice(Float price) {
-//        return productsRepoInterface.findAllByPriceLessThanEqual(price);
-//    }
-//
-//    public List<Product> getProductAfterMinPrice(float price) {
-//        return productsRepoInterface.findAllByPriceGreaterThanEqual(price);
-//    }
-
     //получаем массив ProductDto в диапозоне цен
     public List<ProductDto> getProductBetweenPrices(float priceMin, float priceMax) {
         return productsRepoInterface.findAllByPriceBetween(priceMin, priceMax).stream()
                 .map(ProductDto::new)
                 .collect(Collectors.toList());
     }
-//    public List<Product> getProductBetweenPrices(float priceMin, float priceMax) {
-//        return productsRepoInterface.findAllByPriceBetween(priceMin, priceMax);
-//    }
 
     public void deleteById (Long id) {
         productsRepoInterface.deleteById(id);

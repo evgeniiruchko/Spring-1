@@ -29,7 +29,6 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-//    public String addNewBox(@RequestParam Long id, @RequestParam String color, @RequestParam int size) {
         public String addNewBox(@ModelAttribute Product product) {
         productService.saveProduct(product);
         return "redirect:/products/all";

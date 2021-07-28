@@ -2,7 +2,6 @@ package ru.geekbrains.homework6.repositories;
 
 import org.springframework.stereotype.Repository;
 import ru.geekbrains.homework6.model.Costumer;
-import ru.geekbrains.homework6.model.Product;
 
 import java.util.Collections;
 import java.util.List;

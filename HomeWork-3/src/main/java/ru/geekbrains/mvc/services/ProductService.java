@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private ProductsRepoInterface productsRepoInterface;
+    private final ProductsRepoInterface productsRepoInterface;
 
     @Autowired
     ProductRepo productRepo;
