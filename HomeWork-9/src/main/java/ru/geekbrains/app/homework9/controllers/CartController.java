@@ -1,9 +1,7 @@
 package ru.geekbrains.app.homework9.controllers;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.app.homework9.model.Dto.ProductDto;
 import ru.geekbrains.app.homework9.model.Entity.Product;
 import ru.geekbrains.app.homework9.services.CartService;
 

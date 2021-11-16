@@ -13,7 +13,6 @@ public class ProductRepo implements ProductsRepoInterface {
 
     @Override
     public Optional<Product> getProductByIndex(long index) {
-        //return productList.get(index);
         return productList.stream().filter(p -> p.getId() == index).findFirst();
     }
 

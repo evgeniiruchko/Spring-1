@@ -10,16 +10,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
-    private ProductService productService;
+    private final ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
-
-//    @GetMapping
-//    public List<Product> getAllProducts(Model model) {
-//        return productService.getAllProducts();
-//    }
 
     @GetMapping("/sale")
     public List<Product> getAllSaleProducts(Model model) {
